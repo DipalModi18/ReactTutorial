@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Person from '../Person/Person';
+import ReactRouting from '../ReactRouting/ReactRouting';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
           Learn React
       </header>
       <Person name1="Dipal" age1="22" name2="Modi" age2="23"></Person>
+      <ReactRouting></ReactRouting>
     </div>
   );
 }
