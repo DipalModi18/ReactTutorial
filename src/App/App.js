@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Person from '../Person/Person';
-import ReactRouting from '../ReactRouting/ReactRouting';
+import TwoWayBinding from './../TwoWayBinding/TwoWayBinding';
 
 function App() {
   return (
@@ -9,8 +8,7 @@ function App() {
       <header className="App-header">
           Learn React
       </header>
-      <Person name1="Dipal" age1="22" name2="Modi" age2="23"></Person>
-      <ReactRouting></ReactRouting>
+      <TwoWayBinding />
     </div>
   );
 }
