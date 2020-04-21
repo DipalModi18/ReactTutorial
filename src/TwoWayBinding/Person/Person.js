@@ -6,7 +6,9 @@ function Person(props) {
     <div className="person">
       <h1>{props.name}</h1>
       <p>{props.age}</p>
-      Enter Name: <input type="text" value={props.name} onChange={props.changeName}></input>
+      Enter Name: <input type="text" value={props.name} onChange={props.changeName}></input> 
+      <br /> <br />
+      <button onClick={() => props.deletePerson(props.id)}>Delete Me!!</button>
     </div>
   );
 }
