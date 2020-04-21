@@ -3,6 +3,7 @@ import Person from './Person/Person';
 import AddPerson from './Person/AddPerson';
 
 class TwoWayBinding extends React.Component {
+    randomPerson = {};
 
     constructor() {
         super();
@@ -11,6 +12,18 @@ class TwoWayBinding extends React.Component {
                 { 'id': 1, 'name': 'Dipal', 'age': 23 },
            ]
         }
+    }
+
+    async componentDidMount() {
+        const url = "https://api.randomuser.me/";
+        const response = await fetch(url);
+        const data = await response.json();
+        this.randomPerson = { 
+            'id': 'x', 
+            'name': data.results[0].name.first + ' ' + data.results[0].name.last, 
+            'age': data.results[0].registered.age
+        }
+        console.log(this.randomPerson);
     }
 
     changePersonName(eve, person) {
@@ -49,6 +62,11 @@ class TwoWayBinding extends React.Component {
         return (
             <div>
                 {this.state.persons.map((person) => this.renderPerson(person))}
+                <Person 
+                    name={this.randomPerson.name}
+                    age={this.randomPerson.age}
+                    changeName={(event) => this.changePersonName(event, this.randomPerson)}>
+                </Person>
                 <AddPerson click={(person) => this.addPerson(person)}/>
             </div>
         )
