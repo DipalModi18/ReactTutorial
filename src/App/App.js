@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import TwoWayBinding from './../TwoWayBinding/TwoWayBinding';
+import ErrorBoundry from './../ErrorBoundry/ErrorBoundry';
+import Section3 from './../Section3/Section3/Section3';
 
 function App() {
   return (
@@ -8,7 +10,10 @@ function App() {
       <header className="App-header">
           Learn React
       </header>
-      <TwoWayBinding />
+      {/* <ErrorBoundry> */}
+        <TwoWayBinding />
+      {/* </ErrorBoundry> */}
+      <Section3 />
     </div>
   );
 }

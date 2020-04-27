@@ -2,6 +2,11 @@ import React from 'react';
 import Person from './Person/Person';
 import AddPerson from './Person/AddPerson';
 import './../w3.css';
+import Radium from 'radium';
+
+// styled-components utilises tagged template literals to style your components.
+import styled from 'styled-components';  
+
 
 class TwoWayBinding extends React.Component {
     randomPerson = {};
@@ -10,8 +15,8 @@ class TwoWayBinding extends React.Component {
         super();
         this.state = {
             persons : [
-                { 'id': 1, 'name': 'Dipal', 'age': 23 },
-                { 'id': 2, 'name': 'Arpit', 'age': 22 }
+                { 'id': 1, 'name': 'Dipal Modi', 'age': 23 },
+                { 'id': 2, 'name': 'Arpit Patel', 'age': 22 }
            ],
            showPersons: true
         }
@@ -86,6 +91,23 @@ class TwoWayBinding extends React.Component {
     }
 
     render() {
+        const buttonStyle = {
+            border : null,
+            display: "inline-block",
+            padding: "8px 16px",
+            verticalAlign : "middle",
+            overflow: "hidden",
+            textDecoration: null,
+            color: "inherit",
+            backgroundColor: "red",
+            textAlign: "center",
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+            borderRadius : "16px",
+            ':hover': {  // Using Radium we can use psuedo selector as well as media queries
+                backgroundColor: "salmon"
+            }
+        }
         // Everything inside the render method executed when React re-renders the component and not just the content inside the return
 
         // JSX is written inside the return in which you can't use if statement
@@ -93,12 +115,20 @@ class TwoWayBinding extends React.Component {
         // Or you can use if statement inside the render function and outside the return like below
         let buttonText = ""
         if(this.state.showPersons) { buttonText = "Hide Persons" } 
-        else { buttonText = "Show Persons" }
+        else { 
+            buttonText = "Show Persons"; 
+            // Changing the CSS based on a condition
+            buttonStyle.backgroundColor = "green";
+            buttonStyle[':hover'] = {
+                backgroundColor: "lightgreen"
+            }
+        }
 
         return (
             <div>
                 <br />
-                <button onClick={this.toggleShowPersons} className="w3-btn w3-round-xlarge w3-blue">{buttonText}</button>
+                
+                <button onClick={this.toggleShowPersons} style={buttonStyle}>{buttonText}</button>
                 {
                 this.state.showPersons ?  // If the showPerson set to true then display the content after ternary statement ? else display the content null which is after the :
                 <div>
@@ -116,4 +146,4 @@ class TwoWayBinding extends React.Component {
     }
 }
 
-export default TwoWayBinding;
+export default Radium(TwoWayBinding);
