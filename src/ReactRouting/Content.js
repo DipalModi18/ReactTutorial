@@ -4,7 +4,7 @@ class Content extends React.Component {
     render() {
         return(
             <div>
-                <h1>In Content</h1>
+                <h4>In Content</h4>
             </div>
         )
     }

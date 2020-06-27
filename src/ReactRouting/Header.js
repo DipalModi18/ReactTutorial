@@ -5,16 +5,12 @@ import {
 
 export const Header = (props) => {
     return (
-        <nav className="navbar navbar-default">
-            <div className="container">
-                <div className="navbar-header">
-                    <ul className="nav navbar-nav">
-                        <li><Link to={"/home"} activeStyle={{color: "red"}}>Home</Link></li>
-                        <li><Link to={"/about"}>User</Link></li>
-                        <li><Link to={"/content"}>Content</Link></li>
-                    </ul>
-                </div>
-            </div>
+        <nav>
+            <ul>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="about">About</Link></li>
+                <li><Link to="content">Content</Link></li>
+            </ul>
         </nav>
     );
 };

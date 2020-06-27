@@ -18,7 +18,7 @@ class TwoWayBinding extends React.Component {
                 { 'id': 1, 'name': 'Dipal Modi', 'age': 23 },
                 { 'id': 2, 'name': 'Arpit Patel', 'age': 22 }
            ],
-           showPersons: true
+           showPersons: false
         }
     }
 

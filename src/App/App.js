@@ -9,7 +9,7 @@ import * as serviceWorker from '../Section4/serviceWorker';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="header">
           Learn React
       </header>
       {/* <ErrorBoundry> */}
