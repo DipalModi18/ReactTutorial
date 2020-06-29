@@ -1,3 +1,4 @@
+// Reference: https://reacttraining.com/react-router/web/guides/quick-start
 import React from "react";
 import Home from './Home';
 import About from './About';
@@ -5,7 +6,6 @@ import Topics from './Topics';
 import {
     Route,
     BrowserRouter as Router,
-    useRouteMatch,
     Link
 } from 'react-router-dom';
 
