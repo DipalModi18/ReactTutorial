@@ -9,6 +9,7 @@ import Section from '../Scrolling';
 import {Element} from 'react-scroll';
 import Circle from './../Circle/Circle';
 import ScrollComponents from './../Scrolling/ScrollComponents';
+import ImageSlider from '../ImageSlider/ImageSlider';
 
 class App extends React.Component {
   constructor() {
@@ -34,7 +35,7 @@ class App extends React.Component {
         {/* <Section />  TODO: Complete Scrolling.js and Section.js */}
         <button onClick={() => {this.setState({enableScrolling: !this.state.enableScrolling})}}>Toggle Scrolling</button>
         {this.state.enableScrolling ? <ScrollComponents /> : null} <hr />
-        
+        <ImageSlider />
       </div>
     );
   }
